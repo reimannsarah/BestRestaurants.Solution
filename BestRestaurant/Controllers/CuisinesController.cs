@@ -36,39 +36,39 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Details(int id)
     {
-      // Category thisCategory = _db.Categories
-      //                             .Include(category => category.Items)
-      //                             .FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      Cuisine thisCuisine = _db.Cuisines
+                                  .Include(cuisine => cuisine.Restaurants)
+                                  .FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
     }
 
-    public ActionResult Edit(int id)
-    {
-      // Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
-    }
+    // public ActionResult Edit(int id)
+    // {
+    //   // Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
+    //   return View(thisCategory);
+    // }
 
-    [HttpPost]
-    public ActionResult Edit(Category category)
-    {
-      // _db.Categories.Update(category);
-      // _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
+    // [HttpPost]
+    // public ActionResult Edit(Category category)
+    // {
+    //   // _db.Categories.Update(category);
+    //   // _db.SaveChanges();
+    //   return RedirectToAction("Index");
+    // }
 
-    public ActionResult Delete(int id)
-    {
-      // Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
-    }
+    // public ActionResult Delete(int id)
+    // {
+    //   // Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
+    //   return View(thisCategory);
+    // }
 
-    [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmed(int id)
-    {
-      // Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      // _db.Categories.Remove(thisCategory);
-      // _db.SaveChanges();
-      return RedirectToAction("Index");
-    }
+    // [HttpPost, ActionName("Delete")]
+    // public ActionResult DeleteConfirmed(int id)
+    // {
+    //   // Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
+    //   // _db.Categories.Remove(thisCategory);
+    //   // _db.SaveChanges();
+    //   return RedirectToAction("Index");
+    // }
   }
 }
