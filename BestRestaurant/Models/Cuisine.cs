@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 
-namespace Template.Models
+namespace BestRestaurant.Models
 {
-  public class DaddyTemplate
+  public class Cuisine
   {
-    public int DaddyTemplateId { get; set; }
+    public int CuisineId { get; set; }
     public string Name { get; set; }
-    public List<BabyTemplate> BabyTemplates { get; set; }
+    public List<Restaurant> Restaurant { get; set; }
   }
 }

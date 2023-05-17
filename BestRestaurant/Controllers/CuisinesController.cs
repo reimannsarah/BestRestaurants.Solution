@@ -17,7 +17,7 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Index()
     {
-      // List<Category> model = _db.Categories.ToList();
+      List<Cuisine> model = _db.Cuisines.ToList();
       return View(model);
     }
 
@@ -27,10 +27,10 @@ namespace BestRestaurant.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public ActionResult Create(Cuisine cuisine)
     {
-      // _db.Categories.Add(category);
-      // _db.SaveChanges();
+      _db.Cuisines.Add(cuisine);
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
