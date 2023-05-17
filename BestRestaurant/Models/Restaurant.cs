@@ -8,7 +8,6 @@ namespace BestRestaurant.Models
     public string Name { get; set; }
     public string Chef { get; set; }
     public string Price { get; set; }
-    public bool Vegan { get; set; }
     public int CuisineId { get; set; }
     public Cuisine Cuisine { get; set; }
   }
