@@ -10,5 +10,11 @@ namespace BestRestaurant.Models
     public string Price { get; set; }
     public int CuisineId { get; set; }
     public Cuisine Cuisine { get; set; }
+    public static Dictionary<int, string> PriceOptions = new Dictionary<int, string>() { 
+  {1, "$"}, 
+  {2, "$$"}, 
+  {3, "$$$"},
+  {4, "$$$$"},
+  {5, "$$$$$"} };
   }
 }

@@ -1,0 +1,10 @@
+@{
+  Layout = "_Layout";
+}
+
+@using (Html.BeginForm())
+{
+  <label for="Price">Price Search: </label>;
+  @Html.DropDownList("Price");
+  <input type="submit" value="Search Restaurants"/>
+}

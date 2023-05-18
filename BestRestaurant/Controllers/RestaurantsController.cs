@@ -26,13 +26,7 @@ namespace BestRestaurant.Controllers
 
     public ActionResult Create()
     {
-      Dictionary<int, string> PriceOptions = new Dictionary<int, string>() { 
-        {1, "$"}, 
-        {2, "$$"}, 
-        {3, "$$$"},
-        {4, "$$$$"},
-        {5, "$$$$$"} };
-      ViewBag.Price = new SelectList(PriceOptions, "Value", "Value");
+      ViewBag.Price = new SelectList(Restaurant.PriceOptions, "Value", "Value");
       ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Type");
       return View();
     }
