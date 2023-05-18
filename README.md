@@ -26,7 +26,7 @@ Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Da
 ```json
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=template_with_ef_core;uid=root;pwd=epicodus;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=best_restaurants_with_ef_core;uid=root;pwd=epicodus;"
   }
 }
 ```
