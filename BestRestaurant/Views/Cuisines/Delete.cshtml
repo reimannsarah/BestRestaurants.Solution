@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2>Are you sure? Are you positive? HIV positive?? Oh god. Shirley, you can't be serious!!! Okay, you do you.</h2>
+
+@model BestRestaurant.Models.Cuisine
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.CuisineId)
+  <input type="submit" value="Delete" />
+}
+
+@Html.ActionLink("Im scared, take me home", "Index")
