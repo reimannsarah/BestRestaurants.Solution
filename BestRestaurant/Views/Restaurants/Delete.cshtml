@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BestRestaurant.Models.Restaurant
+
+<h2>ARE YOU SURE?!?! SALLY?!!?!?</h2>
+
+
+@using(Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.RestaurantId)
+  <input type="submit" value="Delete" />
+}

@@ -49,42 +49,42 @@ namespace BestRestaurant.Controllers
       return RedirectToAction("Index");
     }
 
-    // public ActionResult Details(int id)
-    // {
-    //   // Item thisItem = _db.Items
-    //   //                     .Include(item => item.Category)
-    //   //                     .FirstOrDefault(item => item.ItemId == id);
-    //   return View(thisItem);
-    // }
+    public ActionResult Details(int id)
+    {
+      Restaurant thisRestaurant = _db.Restaurants
+                          .Include(restaurant => restaurant.Cuisine)
+                          .FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      return View(thisRestaurant);
+    }
 
-    // public ActionResult Edit(int id)
-    // {
-    //   // Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-    //   // ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
-    //   return View(thisItem);
-    // }
+    public ActionResult Edit(int id)
+    {
+      Restaurant thisItem = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      return View(thisItem);
+    }
 
-    // [HttpPost]
-    // public ActionResult Edit(Item item)
-    // {
-    //   // _db.Items.Update(item);
-    //   // _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost]
+    public ActionResult Edit(Restaurant restaurant)
+    {
+      _db.Restaurants.Update(restaurant);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
-    // public ActionResult Delete(int id)
-    // {
-    //   // Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-    //   return View(thisItem);
-    // }
+    public ActionResult Delete(int id)
+    {
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      return View(thisRestaurant);
+    }
 
-    // [HttpPost, ActionName("Delete")]
-    // public ActionResult DeleteConfirmed(int id)
-    // {
-    //   // Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-    //   // _db.Items.Remove(thisItem);
-    //   // _db.SaveChanges();
-    //   return RedirectToAction("Index");
-    // }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      _db.Restaurants.Remove(thisRestaurant);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

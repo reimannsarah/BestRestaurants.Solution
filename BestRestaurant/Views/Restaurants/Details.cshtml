@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BestRestaurant.Models.Restaurant
+
+<h2>Restaurant Details</h2>
+<hr />
+<div>
+  <h2>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h2>
+  <h5>@Html.DisplayNameFor(model => model.Chef): @Html.DisplayFor(model => model.Chef)</h5>
+  <h5>@Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(model => model.Price)</h5>
+  <h5>@Html.DisplayNameFor(model => model.Cuisine): @Html.DisplayFor(model => model.Cuisine.Type)</h5>
+</div>
+
+@Html.ActionLink("Bring me back to the restaurants", "Index", "Restaurants", null, new { @class = "btn"} )
+@Html.ActionLink("Take me home, country road", "Index", "Home", null, new { @class = "btn" })
+@Html.ActionLink("Delete", "Delete", new { id = Model.RestaurantId})
